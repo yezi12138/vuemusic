@@ -38,5 +38,36 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 ![img1](http://wx1.sinaimg.cn/mw690/a359ab18gy1fg6xvgx4yxj208g0ezmzq.jpg)
 ![img1](http://wx4.sinaimg.cn/mw690/a359ab18gy1fg6xvf7wzij208e0f2dg7.jpg)
 
+## API
+        //获取榜单
+    this.$http.jsonp('http://c.y.qq.com/v8/fcg-bin/fcg_myqq_toplist.fcg',{
+					params: {
+						g_tk: 5381,
+						uin: 0,
+						format: 'jsonp',
+						inCharset: 'utf-8',
+						outCharset: 'utf-8',
+						notice: 0,
+						platform: 'h5',
+						needNewCode: 1,
+						_: new Date().getTime()
+					},
+					jsonp: 'jsonpCallback'
+				})
+	//榜单详情
+	this.$http.jsonp('https://c.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp    .fcg', {
+				params: {
+					topid: this.$route.query.id,
+					format: 'jsonp',
+					inCharset: 'utf8',
+					outCharset: 'utf-8',
+					notice: 0,
+					platform: 'yqq',
+					needNewCode: 0
+				},
+				jsonp: 'jsonpCallback'
+			})
+	//播放音乐
+	http://ws.stream.qqmusic.qq.com//${id}.m4a?fromtag=46
 
 使用api来自（https://github.com/gaoxiaosong1113/vue-music）
